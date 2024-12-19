@@ -1,0 +1,5 @@
+display_library: sdl2, options=gui_debug
+romimage: file=$BXSHARE/BIOS-bochs-latest
+vgaromimage: file=$BXSHARE/VGABIOS-lgpl-latest
+floppya: 160k=bin/disk.img,status=inserted
+

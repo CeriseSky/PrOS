@@ -1,0 +1,26 @@
+details for the implementation of the path parser in boot.asm
+
+/path/to/example.ext
+
+path/to/exmample.ext
+if the path starts with a slash, skip it
+
+while a slash can be found in the path
+    - if flags say we have seen the final segment then fail
+    - split the string into the rest of the path, and the current
+      segment without the slash
+        "path" "to/example.ext" are now separate strings
+    - create a buffer full of 11 spaces
+    - if there is a dot, copy up to 3 characters from after the dot into the
+      last 3 characters of the buffer
+    - copy up to 8 characters from the start of the current path segment into
+      the buffer
+    - convert the entire buffer into upper case
+    - search the current directory for an entry with the name matching the
+      buffer. If it isn't found then fail
+    - determine the type of entry; if the entry is a file then update flags to
+      show that we have seen the last segment (cannot recurse into a file)
+    - read the entire file into the directory buffer
+
+if flags say we have not seen the final segment then fail
+

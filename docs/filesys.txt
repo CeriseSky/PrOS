@@ -1,0 +1,18 @@
+file system tree is planned to look as follows:
+/
++- apps/
++- system/
+|  +- drivers/
+|     +- configs/
+|        +- drvmgr16.cfg
+|     +- drvmgr.p16
+|  +- boot/
+|     +- boot.com
++- users/
+
+the file system tree currently looks like this:
+/
++- system/
+   +- boot/
+      +- boot.com
+
